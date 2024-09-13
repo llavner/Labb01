@@ -9,6 +9,7 @@ namespace Labb01___Algoritmer
         {
             Console.Write("Enter text: ");
             string userString = Console.ReadLine();
+            Console.WriteLine();
 
             int equalIndex = 0;
             ulong sumOfAllSubstrings = 0;
