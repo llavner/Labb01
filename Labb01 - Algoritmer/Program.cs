@@ -7,7 +7,7 @@ namespace Labb01___Algoritmer
     {
         static void Main(string[] args)
         {
-            Console.Write("Enter text: ");
+            Console.Write("Skriv in din text: ");
             string userString = Console.ReadLine();
             Console.WriteLine();
 
