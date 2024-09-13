@@ -12,10 +12,10 @@ namespace Labb01___Algoritmer
 
             int equalIndex = 0;
             ulong sumOfAllSubstrings = 0;
-            
+
             for (int i = 0; i < userString.Length; i++)
             {
-                
+
                 equalIndex = userString.IndexOf(userString[i], i + 1);
                 string subString = string.Empty;
 
