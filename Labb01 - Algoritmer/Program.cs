@@ -36,8 +36,12 @@ namespace Labb01___Algoritmer
                     continue;
 
                 sumOfAllSubstrings += ulong.Parse(subString);
-                
 
+                string[] colorMode = userString.Split(subString, StringSplitOptions.None); //blir tokig!
+
+                Console.Write(colorMode[0]);
+                Console.WriteLine(colorMode[2]);
+                Console.Write(colorMode[1]);
             }
 
             //Console.WriteLine(sumOfAllSubstrings);
