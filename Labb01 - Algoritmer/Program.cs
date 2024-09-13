@@ -15,13 +15,11 @@ namespace Labb01___Algoritmer
 
             for (int i = 0; i < userString.Length; i++)
             {
-
                 equalIndex = userString.IndexOf(userString[i], i + 1);
                 string subString = string.Empty;
 
                 for (int j = i; j <= equalIndex; j++)
                 {
-
                     if (char.IsDigit(userString[j]))
                         subString += userString[j];
                     else
@@ -35,16 +33,15 @@ namespace Labb01___Algoritmer
 
                 sumOfAllSubstrings += ulong.Parse(subString);
 
-                string[] coloredTextArray = userString.Split(subString);
+                string[] splitArray = userString.Split(subString);
 
-                Console.Write(coloredTextArray[0]);
+                Console.Write(splitArray[0]);
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.Write(subString);
                 Console.ResetColor();
-                Console.Write(coloredTextArray[1]);
+                Console.Write(splitArray[1]);
                 Console.WriteLine();
             }
-
 
             Console.WriteLine();
             Console.WriteLine($"Summan av substrängarna är: {sumOfAllSubstrings}");
