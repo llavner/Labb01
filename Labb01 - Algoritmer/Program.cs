@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlTypes;
 
 namespace Labb01___Algoritmer
 {
@@ -6,19 +7,17 @@ namespace Labb01___Algoritmer
     {
         static void Main(string[] args)
         {
-            //Console.Write("Enter text: ");
-            string userString = "29535123p48723487597645723645"; //Console.ReadLine();
+            Console.Write("Enter text: ");
+            string userString = Console.ReadLine();
 
             int equalIndex = 0;
             ulong sumOfAllSubstrings = 0;
-
-
+            
             for (int i = 0; i < userString.Length; i++)
             {
                 
                 equalIndex = userString.IndexOf(userString[i], i + 1);
                 string subString = string.Empty;
-
 
                 for (int j = i; j <= equalIndex; j++)
                 {
@@ -30,21 +29,25 @@ namespace Labb01___Algoritmer
                         subString = string.Empty;
                         break;
                     }
-                    
                 }
                 if (subString == string.Empty)
                     continue;
 
                 sumOfAllSubstrings += ulong.Parse(subString);
 
-                string[] colorMode = userString.Split(subString, StringSplitOptions.None); //blir tokig!
+                string[] coloredTextArray = userString.Split(subString);
 
-                Console.Write(colorMode[0]);
-                Console.WriteLine(colorMode[2]);
-                Console.Write(colorMode[1]);
+                Console.Write(coloredTextArray[0]);
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.Write(subString);
+                Console.ResetColor();
+                Console.Write(coloredTextArray[1]);
+                Console.WriteLine();
             }
 
-            //Console.WriteLine(sumOfAllSubstrings);
+
+            Console.WriteLine();
+            Console.WriteLine($"Summan av substrängarna är: {sumOfAllSubstrings}");
         }
     }
 }
